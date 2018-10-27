@@ -1,0 +1,28 @@
+#hed2 {
+    color: green;
+}
+
+h1 {
+    /* цвет шрифта */
+    color:brown;
+    /* размер шрифта */
+    font-size: 48px;
+    /* сделать буквы большими */
+    text-transform: uppercase;
+}
+
+body {
+    font-size: 60px;
+}
+
+body h2 {
+    color: red;
+}
+
+h2 {
+    color: orange !important;
+}
+
+.header-two {
+    color: pink;
+}
