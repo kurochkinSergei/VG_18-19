@@ -1,0 +1,40 @@
+.main {
+    width: 800px;
+    height: 600px;
+    background-color: bisque;
+    padding: 40px 10px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+
+.column {
+    height: 100%;
+    width: 300px;
+    background-color: turquoise;
+    display: inline-block;
+}
+
+.column-570 {
+    width: 570px;
+}
+
+.column-200 {
+    width: 200px;
+}
+
+.column:first-child {
+    margin-right: 10px;
+}
+
+.row {
+    height: 100px;
+    width: 100%;
+    background-color: brown;
+    height: calc((100% - 80px)/3);
+    /* height: calc(440px/3); */
+    /* height: 146.666667px; */
+}
+
+.row:nth-child(2n) {
+    margin: 40px 0;
+}
