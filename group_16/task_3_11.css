@@ -30,8 +30,11 @@ html, body {
 .column {
     height: 100%;
     width: 20%;
-    display: inline-block;
+    float: left;
+    font-size: 20px;
+    padding: 10px;
     background: lemonchiffon;
+    box-sizing: border-box;
 }
 
 .column-70 {
@@ -44,4 +47,10 @@ html, body {
     width: calc(30% - 10px);
     margin-left: 10px;
     border-radius: 0 0 40px 0;
+}
+
+.column-header {
+    font-size: 48px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
