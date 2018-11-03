@@ -22,4 +22,26 @@ html, body {
     height: 100%;
     background: whitesmoke;
     border-radius: 0  0  40px 40px;
+    font-size: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.column {
+    height: 100%;
+    width: 20%;
+    display: inline-block;
+    background: lemonchiffon;
+}
+
+.column-70 {
+    width: calc(70% - 10px);
+    margin-right: 10px;
+    border-radius: 0 0 0 40px;
+}
+
+.column-30 {
+    width: calc(30% - 10px);
+    margin-left: 10px;
+    border-radius: 0 0 40px 0;
 }
