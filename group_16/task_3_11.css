@@ -54,3 +54,15 @@ html, body {
     text-transform: uppercase;
     margin-bottom: 20px;
 }
+
+.text-image {
+    width: 180px;
+    height: 180px;
+    box-sizing: border-box;
+    background-image: url("./../group_10/penguin.jpg");
+    background-size: cover;
+    background-position: -40px 0;
+    border-radius: 90px;
+    float: left;
+    float: right;
+}
