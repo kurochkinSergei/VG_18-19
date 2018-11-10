@@ -10,7 +10,10 @@
             height: 100%;
             margin: 0;    
         }
-
+        
+        div {
+            box-sizing: border-box;
+        }
         .header {
           background: rgba(104, 216, 155, 1);
           height: 10%;
@@ -22,6 +25,7 @@
             height: calc(90% - 40px);
             margin: 40px;
             margin-top: 0;
+            padding: 20px;
         }
     </style>
 </head>
@@ -31,7 +35,12 @@
         sdsdsd
     </div>
     <div class="main">
-        sdsdsdsd
+        <div class="column">
+            Левая
+        </div>
+        <div class="column">
+            Правая
+        </div>
     </div>
 </body>
 </html>
