@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .menu {
+            background-color: bisque;
+            padding: 5px;
+            height: 50px;
+        }
+        .menu-item {
+            background-color: rebeccapurple;
+            margin: 5px;
+            color: white;
+            text-align: center;
+            height: 40px;
+            width: 70px;
+            line-height: 40px;
+            float: left;
+            position: relative;
+        }
+
+        .submenu {
+            position: absolute;
+            top: 40px;
+            width: 70px;
+            left: 0px;
+            background-color:plum;
+            display: none;
+            border-top: 10px solid bisque;
+        }
+        
+        .menu-item:hover {
+            cursor: pointer;
+            background-color: rosybrown;
+        }
+
+        .menu-item:hover .submenu {
+            display: block;
+        }
+
+        .submenu:hover {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-item">Главная</div>
+        
+        <div class="menu-item">
+            <div class="menu-item-text">
+                Работы
+            </div>
+            <div class="submenu">
+                <div>Работы</div>
+                <div>Работы</div>
+                <div>Работы</div>
+                <div>Работы</div>
+                <div>Работы</div>
+            </div>
+        </div>
+        
+        <div class="menu-item">О нас</div>
+    </div>
+</body>
+</html>
