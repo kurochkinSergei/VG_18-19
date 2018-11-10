@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Position</title>
+    <style>
+        div {
+            width: 120px;
+            height: 120px;
+            background: red;
+            text-align: center;
+            line-height: 120px;
+            color: white;
+            text-transform: uppercase;
+        }
+        
+        .posme {
+            background: blue;
+            position: fixed;
+            left: 40px;
+            top: 40px;
+        }
+
+        .container {
+            background:bisque;
+            margin: 100px;
+            width: 400px;
+            height: 8000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div>
+        Hello
+    </div>
+    <div class="posme">
+        position me
+    </div>
+    <div>
+        Bye
+    </div>
+</div>
+</body>
+</html>
