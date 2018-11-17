@@ -14,12 +14,23 @@
             padding: 5px;
         }
 
-        ul > li {
+        ul li {
             list-style-type: none;
             background: yellowgreen;
             height: 40px;
             margin-bottom: 10px;
+            text-align: center;
+            line-height: 40px;
             /* list-style-image: url('./linux-logo.png'); */
+        }
+
+        a {
+            color:firebrick;
+            text-decoration: none;
+            /* text-decoration: line-through;
+            text-decoration: overline;
+            text-decoration: underline;
+            text-decoration-color:darkslategrey; */
         }
 
         .last {
@@ -29,8 +40,14 @@
 </head>
 <body>
     <ul>
-        <li>гугол</li>
-        <li>яндекс</li>
+        <li>
+            <a href="">гугол</a>
+        </li>
+        
+        <a href="https://aliexpres.com">
+            <li>АЛИАКСПРЕЗ</li>
+        </a>
+        
         <li>яндекс</li>
         <li class="last">яндекс</li>
     </ul>

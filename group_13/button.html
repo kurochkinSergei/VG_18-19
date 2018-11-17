@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Button</title>
+
+    <style>
+        button {
+            width: 80px;
+            height: 40px;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            border-radius: 20px;
+            background-color: pink;
+            border: 2px solid darkgray;
+            color: #666;
+        }
+
+        .long {
+            height: 5000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="longId" class="long">Начало</div>
+    
+    <a href="#longId">
+        <button onclick="console.log('sdsd')">
+            Наверх
+        </button>
+    </a>    
+</body>
+</html>
