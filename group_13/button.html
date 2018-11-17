@@ -18,7 +18,13 @@
             border: 2px solid darkgray;
             color: #666;
         }
-
+        
+        button:hover {
+            background-color: palevioletred;
+            color: white;
+            cursor: pointer;
+            border-color: gray;
+        }
         .long {
             height: 5000px;
         }
@@ -27,10 +33,10 @@
 <body>
     <div id="longId" class="long">Начало</div>
     
-    <a href="#longId">
-        <button onclick="console.log('sdsd')">
-            Наверх
-        </button>
-    </a>    
+    <!-- <a href="#longId"> -->
+    <button class="sdsd" onclick="(() => window.scrollTo(0,0))()">
+        Наверх
+    </button>
+    <!-- </a>     -->
 </body>
 </html>
