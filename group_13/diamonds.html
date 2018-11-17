@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diamonds</title>
+
+    <style>
+        .diamonds {
+            position: relative;
+            top: 100px;
+            left: 100px;
+
+            width: 500px;
+            height: 500px;
+            background: gray;
+        }
+
+        .diamond {
+            width: 100px;
+            height: 100px;
+            top: 0;
+            left: 0;
+            background:turquoise;
+            position: absolute;
+            transform: rotate(45deg);
+        }
+
+        .red {
+            background: red;
+            top: 127.76px;
+            left: 127.76px;
+        }
+
+        .blue {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="diamonds">
+        <div class="diamond"></div>
+        <div class="diamond red"></div>
+        <div class="diamond blue"></div>
+    </div>
+</body>
+</html>
