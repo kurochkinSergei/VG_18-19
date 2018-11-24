@@ -29,6 +29,13 @@
             position: absolute;
             top: 0;
             left: 150px;
+            cursor: pointer;
+            /* visibility: hidden; */
+            display: none;
+        }
+
+        .menu-item-submenu:hover  .submenu {
+            display: block;
         }
 
         .submenu li {
@@ -37,6 +44,21 @@
 
         .menu-item-submenu {
             position: relative;
+        }
+        
+        .menu-item-submenu-inner {
+            height: initial;
+        }
+        
+        .submenu-inner {
+            position: relative;
+            background-color: red;
+            right: 5px;
+            display: none;
+        }
+
+        .menu-item-submenu-inner:hover .submenu-inner {
+            display: block;
         }
 
         a {
@@ -54,6 +76,7 @@
     </style>
 </head>
 <body>
+    <h2>Подменю справа</h2>
     <ul>
         <li>
             <a href="">гугол</a>
@@ -69,6 +92,31 @@
         <li class="menu-item-submenu">
             яндекс
             <ul class="submenu">
+                <li>охохох</li>
+                <li>ехехех</li>
+                <li>ухухух</li>
+            </ul>
+        </li>
+
+        <li class="last">яндекс 1</li>
+    </ul>
+    
+    <h2>Подменю внутри</h2>
+    <ul>
+        <li>
+            <a href="">гугол</a>
+        </li>
+        
+        <li>
+            <a href="https://aliexpres.com">
+                АЛИАКСПРЕЗ
+            </a>
+        </li>
+        
+        
+        <li class="menu-item-submenu-inner">
+            яндекс
+            <ul class="submenu-inner">
                 <li>охохох</li>
                 <li>ехехех</li>
                 <li>ухухух</li>
