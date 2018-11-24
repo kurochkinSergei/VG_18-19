@@ -55,9 +55,14 @@
         .test:hover {
             width: 270px;
         }
-        
+
+        .test:hover .test__text {
+            opacity: 1;
+        }
+
         .test {
             position: relative;
+            overflow: hidden;
         }
 
         .test__arrow {
@@ -76,6 +81,11 @@
             font-size: 36px;
             text-transform: uppercase;
             color: yellow;
+            opacity: 0;
+            transition-property: opacity;
+            transition-timing-function: ease-out;
+            transition-duration: 0.3s;
+            transition-delay: 0.3s;
         }
     </style>
 </head>
