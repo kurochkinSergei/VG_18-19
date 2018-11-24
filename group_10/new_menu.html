@@ -24,6 +24,21 @@
             /* list-style-image: url('./linux-logo.png'); */
         }
 
+        .submenu {
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 150px;
+        }
+
+        .submenu li {
+            background: yellow;
+        }
+
+        .menu-item-submenu {
+            position: relative;
+        }
+
         a {
             color:firebrick;
             text-decoration: none;
@@ -44,12 +59,23 @@
             <a href="">гугол</a>
         </li>
         
-        <a href="https://aliexpres.com">
-            <li>АЛИАКСПРЕЗ</li>
-        </a>
+        <li>
+            <a href="https://aliexpres.com">
+                АЛИАКСПРЕЗ
+            </a>
+        </li>
         
-        <li>яндекс</li>
-        <li class="last">яндекс</li>
+        
+        <li class="menu-item-submenu">
+            яндекс
+            <ul class="submenu">
+                <li>охохох</li>
+                <li>ехехех</li>
+                <li>ухухух</li>
+            </ul>
+        </li>
+
+        <li class="last">яндекс 1</li>
     </ul>
 </body>
 </html>
