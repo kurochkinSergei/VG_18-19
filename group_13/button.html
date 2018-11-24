@@ -41,15 +41,43 @@
         .long {
             height: 5000px;
         }
+
+        .test {
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50px;
+            transition-property: width;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+
+        .test:hover {
+            width: 250px;
+        }
+        
+        .test {
+            position: relative;
+        }
+
+        .test__arrow {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
     </style>
 </head>
 <body>
+    <div class="test">
+        <img class="test__arrow" src="up-arrow.svg">
+    </div>
+
     <div id="longId" class="long">Начало</div>
     
-    <!-- <a href="#longId"> -->
     <button class="sdsd" onclick="(() => window.scrollTo(0,0))()">
         Наверх
     </button>
-    <!-- </a>     -->
 </body>
 </html>
