@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NOT REACT</title>
+    
+
+</head>
+<body>
+    <div class="root"></div>
+
+
+    <script>
+            window.b = 6;
+            window.c = true;
+            let word = 'MY WORD';
+            let string = new String();
+    
+            string = '5'
+            let arr = [5, 5, 3, 2]
+            let o = {
+                a: 5,
+                d: 6,
+            };
+            
+            let x;
+            
+            function linear (k,x,b) {
+                return k*x + b
+            }
+
+            let y = linear(2,5,7);
+            
+            window.state = {
+                word: 'Hello',
+            }
+
+            function setState(word) {
+                window.state.word = word;
+
+                let a = document.getElementsByClassName('my-div');
+
+                for (let i = 0; i<a.length; i++) {
+                    a[i].innerHTML = window.state.word; 
+                }
+            }
+
+            function renderDiv(word) {
+            //    return  <div className='my-div'> { word }</div>
+                let a = document.createElement('div');
+                a.innerHTML = word;
+                a.className = "my-div";
+                a.style.color = '#ffff00';
+                a.style.fontSize = '72px';
+        
+                let b = document.getElementsByClassName('root')[0];
+                b.appendChild(a);
+            }
+
+            renderDiv(window.state.word);
+            renderDiv(window.state.word);
+            renderDiv(window.state.word);
+            renderDiv(window.state.word);
+            renderDiv(window.state.word);
+            renderDiv(window.state.word);
+    
+        </script>
+</body>
+</html>
