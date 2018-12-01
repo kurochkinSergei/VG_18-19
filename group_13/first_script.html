@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>First script</title>
+
+    <style>
+        .my-box {
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="box">
+
+    </div>
     <script>
         function showMessage(message) {
             alert('Я вывел: ' + message);  
@@ -23,11 +32,19 @@
         }
         
         var c = sum(100, 200);
-        var complexSum = sum(sum(5,7), sum(4,4))
+        var complexSum = sum(sum(5,7), sum(4,4));
 
-        alert(c);
-        alert(complexSum);
-
+        // alert(c);
+        // alert(complexSum);
+        
+        // выбрать элемент с id 'box' и поместить его в переменную  box
+        var box = document.getElementById('box');
+        // добавить класс my-box к этому элементу
+        box.className = 'my-box';
+        // вставить внутрь div текст
+        box.innerHTML = 'Hello';
+        
+        console.log(box)
     </script>
 </body>
 </html>
