@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Первый скрипт!</title>
+    <style>
+        button {
+            font-size: 24px;
+            height: 100px;
+            width: 200px;
+            margin: 50px;
+            /* position: relative; */
+            /* top: -25px; */
+        }
+
+        #box, #filledBox {
+            font-size: 48px;
+            text-align: center;
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <button onclick="buttonClicked()">
+        Нажми меня!!!
+    </button>
+    <button onclick="fillBox()">
+        заполнить коробку
+    </button>
+    <button onclick="getBox()">
+        получить значение
+    </button>
+
+    <div id="box">
+
+    </div>
+
+    <div id="filledBox">
+        Наше значение
+    </div>
+    <script>
+        // функция
+        function alertA(number, message) {
+            alert(number);
+            alert(message);
+        }
+
+        // alertA(567, 'Hello');
+       
+        // сложение двух чисел
+        function sum(a,b) {
+            alert(a + b);
+        }
+        
+        function buttonClicked() {
+            alert('Button was clicked!!!!')
+        }
+
+        function fillBox() {
+            var box = document.getElementById('box');  box.innerHTML = 'Hellow!!!';  
+        }
+
+        function getBox() {
+            var filledBox = document.getElementById('filledBox');
+            alert(filledBox.innerHTML) 
+        }
+        // sum(5,8);
+    </script>
+</body>
+</html>
