@@ -17,6 +17,27 @@
     <div id="box">
 
     </div>
+    
+    <div>
+        <button onclick="sayHello()">
+            Сказать привет!
+        </button>
+    </div>
+    
+    <div>
+        <input id="eqInput" >
+    </div>
+
+    <div>
+        <button onclick="setToInput(5)">
+            Записать в инпут число 5
+        </button>
+
+        <button onclick="readFromInput()">
+            Показать значение инпута
+        </button>
+    </div>
+    
     <script>
         function showMessage(message) {
             alert('Я вывел: ' + message);  
@@ -38,13 +59,25 @@
         // alert(complexSum);
         
         // выбрать элемент с id 'box' и поместить его в переменную  box
-        var box = document.getElementById('box');
-        // добавить класс my-box к этому элементу
-        box.className = 'my-box';
-        // вставить внутрь div текст
-        box.innerHTML = 'Hello';
-        
-        console.log(box)
+        function sayHello() {
+            var box = document.getElementById('box');
+            // добавить класс my-box к этому элементу
+            box.className = 'my-box';
+            // вставить внутрь div текст
+            box.innerHTML = 'Hello';
+        }
+
+        function setToInput(val) {
+            var input = document.getElementById('eqInput');
+
+            input.value = val;
+        }
+
+        function readFromInput() {
+            var input = document.getElementById('eqInput');
+
+            alert(input.value);
+        }
     </script>
 </body>
 </html>
