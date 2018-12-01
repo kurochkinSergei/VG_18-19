@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First script</title>
+</head>
+<body>
+    
+    <script>
+        function showMessage(message) {
+            alert('Я вывел: ' + message);  
+        }
+        
+        // showMessage('ПРИВЕТ!');
+        // showMessage('ПОКА!');
+        
+        function sum(a, b) {
+            // alert(a + b);
+
+            return a + b;
+        }
+        
+        var c = sum(100, 200);
+        var complexSum = sum(sum(5,7), sum(4,4))
+
+        alert(c);
+        alert(complexSum);
+
+    </script>
+</body>
+</html>
