@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css"/>
     <style>
         .calculator {
             width: 400px;
@@ -55,19 +54,19 @@
             <div onclick="clearInput()" class="button">C</div>
             <div onclick="setToInput(1)" class="button">+/-</div>
             <div onclick="setToInput(1)" class="button">%</div>
-            <div onclick="setToInput(1)" class="button">/</div>
+            <div onclick="nextStep('/')" class="button">/</div>
         </div>
         <div class="button-row">
             <div onclick="setToInput(7)" class="button">7</div>
             <div onclick="setToInput(8)" class="button">8</div>
             <div onclick="setToInput(9)" class="button">9</div>
-            <div onclick="setToInput(1)" class="button">*</div>
+            <div onclick="nextStep('*')" class="button">*</div>
         </div>
         <div class="button-row">
             <div onclick="setToInput(4)" class="button">4</div>
             <div onclick="setToInput(5)" class="button">5</div>
             <div onclick="setToInput(6)" class="button">6</div>
-            <div onclick="setToInput(1)" class="button">-</div>
+            <div onclick="nextStep('-')" class="button">-</div>
         </div>
         <div class="button-row">
             <div  onclick="setToInput(1)" class="button">1</div>
@@ -78,12 +77,60 @@
         <div class="button-row">
             <div onclick="setToInput(0)" class="button">0</div>
             <div onclick="setToInput(1)" class="button">,</div>
-            <div onclick="setToInput(1)" class="button">=</div>
+            <div onclick="calc()" class="button">=</div>
             <div onclick="setToInput(1)" class="button"></div>
         </div>
     </div>
 
     <script>
+        // функция которая складывает 2 числа alert
+        // функция, которая готоворит "Меня зовут Витя! Мне 15 лет" Витя и 15 - параметры функции
+        // функция, которая сравнивает 2 числа и выводит сообщение типа "7 больше 4"
+        
+        k = 0;
+        var k;
+        
+        function sum(a, b) {
+            // var a = arguments[0];
+            // var b = arguments[1];
+            // console.log(arguments);
+
+            // alert(a + b);
+            console.log('a + b ', a + b)
+        }
+
+        sum(5, 8);
+
+        function sayHello(name, age) {
+            console.log('Привет, меня зовут ' + name + '! Мне ' + age + ' лет!');
+        }
+
+        sayHello('Витя', 95);
+        
+        function compare(a, b) {
+            // > больше
+            // < меньше
+            // == === равно
+            // != !== не равно
+            // >=  больше или равно
+            // <= меньше или равно
+            // || логическиое или
+            // && логическое и
+            
+            if (a > b) {
+                console.log(a + ' больше ' + b)
+            } else if (a === b ) {
+                console.log(a + ' равно ' + b)
+            } else {
+                console.log(a + ' меньше ' + b)
+            }
+        }
+
+        compare(3, 7);
+        compare(-1, -9);
+        compare(100, 0);
+        compare(5, 5);
+
         var a = 0;
         // var b = 0;
         // var which
@@ -98,9 +145,38 @@
             input.value = '';
         }
 
-        function nextStep(operation) {
-            // magic
-            alert("it a kind of magic");
+        function nextStep(op) {
+            // запомнить то, что было введено
+            a = parseInt(input.value);
+
+            // запомнили операцию
+            operation = op;
+
+            // очистили input
+            clearInput();
+
+            console.log('Запомнили: ',a);
+            console.log('Операция: ', operation);
+        }
+
+
+        function calc() {
+            var result;
+            var b = parseInt(input.value);
+
+            if (operation === '+') {
+                // если проверка прошла успешно
+                result = a + b;
+            } else if (operation === '-') {
+                result = a - b;
+            } else if (operation === '*') {
+                result = a * b
+            } else if (operation === '/') {
+                result = a / b
+            }
+
+            input.value = result;
+            a = 0;
         }
     </script>    
 </body>
