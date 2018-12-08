@@ -52,7 +52,7 @@
     <div class="calculator">
         <input id="calc-input" type='text' value="">
         <div class="button-row">
-            <div onclick="setToInput(1)" class="button">C</div>
+            <div onclick="clearInput()" class="button">C</div>
             <div onclick="setToInput(1)" class="button">+/-</div>
             <div onclick="setToInput(1)" class="button">%</div>
             <div onclick="setToInput(1)" class="button">/</div>
@@ -73,7 +73,7 @@
             <div  onclick="setToInput(1)" class="button">1</div>
             <div  onclick="setToInput(2)" class="button">2</div>
             <div  onclick="setToInput(3)" class="button">3</div>
-            <div  onclick="setToInput(1)" class="button">+</div>
+            <div  onclick="nextStep('+')" class="button">+</div>
         </div>
         <div class="button-row">
             <div onclick="setToInput(0)" class="button">0</div>
@@ -84,9 +84,23 @@
     </div>
 
     <script>
-        function setToInput(val) {
-            var input = document.getElementById('calc-input');
-            input.value =input.value + val;
+        var a = 0;
+        // var b = 0;
+        // var which
+        var operation = '';
+        var input = document.getElementById('calc-input');
+       
+        function setToInput(val) {            
+            input.value = input.value + val;
+        }
+
+        function clearInput() {
+            input.value = '';
+        }
+
+        function nextStep(operation) {
+            // magic
+            alert("it a kind of magic");
         }
     </script>    
 </body>
