@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scripts</title>
+</head>
+<body>
+    <script>
+        function celToFarenheit() {
+            var celcius = prompt('Введите температуру в градусах Цельсия');
+            // '23 градуса по Цельсию это  75.4 градуса по Фаренгейту'
+            var farenheit = celcius * 1.8 + 32;
+            alert(celcius + ' градуса по Цельсию\nэто '
+             + farenheit + ' градуса по Фаренгейту');
+        }
+        
+        // celToFarenheit();
+
+        function greeting(name, city, age) {
+            alert('Меня зовут - ' + name + ' Я из города ' + city + '. Мне ' + age + ' лет!');
+        }
+
+        // greeting('Яков', 'Москва', 9)
+
+        function sayHello() {
+            var gender = prompt('Пользователь, введите свой пол!')
+            // операции сравнения:
+            // === равно
+            // !== не равно
+            // > больше
+            // < меньше
+            // >=  больше или равно
+            // <= меньше или равно
+            if (gender === 'мальчик') {
+                // выполнить если gender равно строке 'мальчик'
+                alert('Здравствуйте, Барин!')
+            } else if (gender === 'девочка') {
+                // выполнить, в любом другом случае
+                alert('Здравствуйте, Барыня!')
+            } else {
+                alert('Видимо, вы еще не определилсь -)')
+            }
+        }
+
+        sayHello()
+
+        function compare(a, b) {
+            var res = ' равно '
+            
+            if (a > b) {
+                res = ' больше ';
+            } else if (a < b) {
+                res = ' меньше ';
+            } 
+
+            alert(a + res + b);
+        }
+
+        function compareDifferent(a, b) {
+            var res = ' меньше '
+            
+            if (a - b) {
+                res = ' больше ';
+            } else if (a - b === 0) {
+                res = ' равно ';
+            } 
+
+            alert(a + res + b);
+        }
+
+        compare(3, 5)
+    </script>
+</body>
+</html>
