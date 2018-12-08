@@ -1,68 +1,65 @@
 import React, { Component } from 'react';
 import './App.css';
-
-class Human extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.firstName = props.firstName;
-  //   this.lastName = props.lastName;
-  //   this.age = props.age;
-  // }
-
-  sayHi(city) {
-    return 'HELLO MY NAME IS - ' + this.props.firstName + ' ' + this.props.lastName + ' I am from ' + city;
-  }
-
-  render() {
-    console.log("HUMAN PROPS:", this.props);
-    
-    // то же самое, что
-    // const firstName = this.props.firstName;
-    // это называется  destructive assignment
-    const { firstName, lastName, age } = this.props;
-
-    return <div>
-        <h2>Person name: { firstName } { lastName }</h2>     
-        <h2>Person age: { age }</h2>
-        <p>
-          Greeting: { this.sayHi('Berlin') }
-        </p>     
-    </div>
-  }
-}
+import uuid4 from 'uuid4';
 
 class App extends Component {
   constructor() {
     super()
 
-    this.state = { counter: 0 }
+    this.state = {
+      todos: [
+        {
+          description: 'Скушать кексик',
+          doUntill: 'до 31 декабря',
+          status: 'не выполнено',
+          priority: 'высокая',
+          key: uuid4(),
+        },        
+        {
+          description: 'Сделать матешу',
+          doUntill: 'до понедельника',
+          status: 'не выполнено',
+          priority: 'средняя',
+          key: uuid4(),
+        },        
+        {
+          description: 'Погулять с Виталиком',
+          doUntill: 'до завтра',
+          status: 'не выполнено',
+          priority: 'низкая',
+          key: uuid4(),
+        },        
+      ]
+    }
   }
+  
+  deleteTodo = (keyToDelete) => {
+    console.log('БУДУ УДАЛЯТЬ: ', keyToDelete);
+    const newTodos = this.state.todos.filter(todo => todo.key !== keyToDelete)
 
-  incCounter = () => {
-    let currentCounter = this.state.counter;
-    this.setState({ counter: currentCounter +1 })
+    console.log('СТАРОЕ СОСТОЯНИЕ: ', this.state);
+    console.log('НОВОЕ СОСТОЯНИЕ: ', { ...this.state, todos: newTodos });
+    
+    // меняем состояние только так!!!
+    this.setState({ todos: newTodos });
   }
 
   render() {
-    // let mike = new Human('Michael', 'Vundershaft', 57);
-    // console.log(mike);
-
-    // mike.sayHi('Berlin');
-
-    return (
-      <div className="counter-wrapper">
-        <h1>Hello world</h1>
-        <div>
-          
-          {this.state.counter}
-        </div>
-        <button>-</button>
-        <button onClick={this.incCounter}>+</button>
-
-        <Human firstName={'Ron'} lastName={'Little'} age={20} />
-        <Human firstName={'Katty'} lastName={'Middle'} age={18} />
-      </div>
-      )
+    return (<div className="container">
+      {this.state.todos.map(
+        todo => (
+        <div
+          className="todo"
+          key={todo.key}
+          onClick={() => this.deleteTodo(todo.key)}
+        >
+          <h3>{todo.description}</h3>
+          <p>{todo.doUntill}</p>
+          <p>{todo.priority}</p>
+          <p>{todo.status}</p>
+        </div>)
+      )}
+    </div>)
   }
 }
 
