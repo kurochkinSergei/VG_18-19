@@ -50,37 +50,44 @@
 </head>
 <body>
     <div class="calculator">
-        <input type='text'>
+        <input id="calc-input" type='text' value="">
         <div class="button-row">
-            <div class="button">C</div>
-            <div class="button">+/-</div>
-            <div class="button">%</div>
-            <div class="button">/</div>
+            <div onclick="setToInput(1)" class="button">C</div>
+            <div onclick="setToInput(1)" class="button">+/-</div>
+            <div onclick="setToInput(1)" class="button">%</div>
+            <div onclick="setToInput(1)" class="button">/</div>
         </div>
         <div class="button-row">
-            <div class="button">7</div>
-            <div class="button">8</div>
-            <div class="button">9</div>
-            <div class="button">*</div>
+            <div onclick="setToInput(7)" class="button">7</div>
+            <div onclick="setToInput(8)" class="button">8</div>
+            <div onclick="setToInput(9)" class="button">9</div>
+            <div onclick="setToInput(1)" class="button">*</div>
         </div>
         <div class="button-row">
-            <div class="button">4</div>
-            <div class="button">5</div>
-            <div class="button">6</div>
-            <div class="button">-</div>
+            <div onclick="setToInput(4)" class="button">4</div>
+            <div onclick="setToInput(5)" class="button">5</div>
+            <div onclick="setToInput(6)" class="button">6</div>
+            <div onclick="setToInput(1)" class="button">-</div>
         </div>
         <div class="button-row">
-            <div class="button">1</div>
-            <div class="button">2</div>
-            <div class="button">3</div>
-            <div class="button">+</div>
+            <div  onclick="setToInput(1)" class="button">1</div>
+            <div  onclick="setToInput(2)" class="button">2</div>
+            <div  onclick="setToInput(3)" class="button">3</div>
+            <div  onclick="setToInput(1)" class="button">+</div>
         </div>
         <div class="button-row">
-            <div class="button">0</div>
-            <div class="button">,</div>
-            <div class="button">=</div>
-            <div class="button"></div>
+            <div onclick="setToInput(0)" class="button">0</div>
+            <div onclick="setToInput(1)" class="button">,</div>
+            <div onclick="setToInput(1)" class="button">=</div>
+            <div onclick="setToInput(1)" class="button"></div>
         </div>
-    </div>    
+    </div>
+
+    <script>
+        function setToInput(val) {
+            var input = document.getElementById('calc-input');
+            input.value =input.value + val;
+        }
+    </script>    
 </body>
 </html>
