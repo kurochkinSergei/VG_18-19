@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // итерация (шаг) цикла - одно повторение тела цикла
+        // i - счетчик
+        for (var i = 0; i < 10; i = i + 1) {
+            // проверка счетчика i
+            // тело цикла
+            console.log('i:', i);
+            // увеличение счетчика i
+        }
+        
+        var j = 0;
+        for (;;) {
+            if (j < 10) {
+                console.log('j:', j);
+                j = j + 1;
+            } else {
+                break;
+            }
+        }
+
+        // цикл с постусловием
+        // тело цикла выполнится минимум один раз
+        var k = 10;
+        do {
+            console.log('k', k);
+            k = k + 1;
+        } while (k < 10)
+    </script>
+</body>
+</html>
