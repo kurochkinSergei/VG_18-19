@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task 15/12/2018</title>
+</head>
+<body>
+    <script>
+        function averageOfTwo(a, b) {
+            var avg = (a + b) / 2;
+
+            alert('Среднее значение: ' + avg);
+        }
+        
+        function composeMessage(s) {
+            alert('Пользователь ввел: ' + s);
+        }
+
+        // averageOfTwo(15, 6);
+        // composeMessage('Привет!')
+
+        function compare(a, b) {
+            // b / a === 2
+            if (a * 2 === b) {
+                alert(b + ' больше ' + a + ' в два раза');
+            } else if (b * 2 === a) {
+                alert(a + ' больше ' + b + ' в два раза')
+            }
+        }
+
+        function compare2(a, b) {
+            if (a * 2 === b || b * 2 === a) {
+                alert('Числа ' + a + ' и '+ b + ' различаются в два раза');
+            }
+        }
+
+        // compare(8, 4);
+        // compare(2,4);
+        // compare2(6, 3);
+        
+        // начинаем цикл с 0
+        // прекращаем, когда i становится больше или равно 10
+        // на каждом шаге увеличиваем i на один 
+        for (var i = 1; i < 10; i = i + 1) {
+            // если i прошло проверку, то делаем:
+            console.log("i =", i);
+            // увеличиваем i на единицу
+        }
+        
+        // цикл с пост условием, то есть проверка происходит после выполнения первого шага цикла
+        // объявляем счетчик
+        var j = 0;
+
+        do {
+            console.log("j = ", j);
+            j = j + 2;
+        } while (j < 10)
+        
+        // сумма n натуральных чисел
+        function sumN(n) {
+            var sum = 0;
+            
+            for (var i = 0; i <= n; i = i + 1) {
+                sum = sum + i;
+            }
+            
+            return sum;
+        } 
+
+        alert(sumN(10))
+
+        // ДЗ 
+        // переписать функцию, sumN при помощи do {} while()
+        
+        // написать функцию, которая выведет на экран N первых чисел Фибоначчи
+    </script>
+</body>
+</html>
