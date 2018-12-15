@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumN(n) {
+            var sum = 0;
+         
+            for (var i = 1; i <= n; i = i + 1) {
+                sum = sum + i;
+            }
+            return sum; 
+        }
+
+        function factorial(n) {
+            var fact = 1;
+         
+            for (var i = 1; i <= n; i = i + 1) {
+                fact = fact * i;
+            }
+            return fact; 
+        }
+        
+        console.log('SUMMA', sumN(10));
+        console.log('factorial', factorial(10));
+
+
+        function fib(n) {
+            var fib = '0, 1';
+            var a = 0;
+            var b = 1;
+            var c;
+
+            for (var i = 1; i <= n; i = i + 1) {
+               // магия с a, b, c
+               c = a + b;
+               a = b;
+               b = c;
+
+               fib = fib + ', ' + c;
+            }
+
+            return fib; 
+        }
+
+        console.log('FIB:', fib(6));
+    </script>
+</body>
+</html>
