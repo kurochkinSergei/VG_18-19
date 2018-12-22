@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numbers = [1, 7, 2, 3, 45, 13, 15];
+        // шестой элемент массива - numbers[5] вернет 13
+        // numbers.length - длина массива numbers она равна 7
+
+        /* */
+        function findMax(array) {
+            // считаем первый элемент самым большим, так как других не видели
+            var max = array[0]; // в массиве numbers это 1
+
+            // цикл поиска максимального значения
+            for (var i = 0; i < array.length; i++) {
+                // текущий элемент массива - numbers[i]
+                // если текущий элемент массива больше max, то max = элемент массива
+                if (array[i] > max) {
+                    max = array[i];
+                }
+
+                // console.log(`${i} - ый элемент массива: ${array[i]}`);
+                // console.log(`Самый большой арбуз: ${max}`);
+            }
+
+            return max;
+        }
+
+        console.log(`Максимум в массиве ${numbers} - `, findMax(numbers)) // 45
+        console.log(`Максимум в массиве ${[99, 67, 15]} - `, findMax([99, 67, 15])) // 99
+
+        function reverseArray(array) {
+            var reversed = []
+            // возращает новый перевернутый массив array
+            // поместить в i-ую позицию массива значение:
+            // reversed[i] = 5;
+
+
+            return reversed;
+        }
+
+        reverseArray(numbers) // [15, 13, 45, 3, 2, 7, 1]
+
+        function sort(array) {
+            // возвращает новый массив, который представляет собой отсортированный старый
+
+            // задача со звездочкой:
+            // передавать параметр, определяющий порядок сортировки
+            // 'ascending' - по возрастанию
+            // 'descending' - по убыванию
+        }
+
+        sort(numbers) // [1, 2, 3, 7, 13, 15, 45]
+    </script>
+</body>
+</html>

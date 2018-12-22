@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    
+    <script>
+        function isEven(a) {
+            if (a % 2 === 0 ) {
+                console.log('Число ' + a + ' - четное');
+            } else if ( typeof(a) === 'string') {
+                 console.log(`Вы ввели не число, а строку : "${a}"`)
+                 parseInt()
+                 parseFloat()
+            } else {
+                console.log(`Число ${a} - нечетное`);
+            }
+        }
+
+        // isEven(8);
+        // isEven(9);
+        // isEven(1);
+        // isEven(0);
+        // isEven(-1);
+        // isEven('5');
+        // isEven('sd1256');
+
+        for ( let i = 0; i < 5; i++ ) {
+            // тело цикла
+            console.log('ПРИВЕТ - ' + i);
+        }
+
+        function createGame(title, price, imgPath) {
+            var container = document.createElement('div');
+            container.className = 'game-container';
+            
+            var image = document.createElement('img');
+            image.src = imgPath;
+
+            var gameTitle = document.createElement('h2');
+            gameTitle.innerText = title;
+            
+            var gamePrice = document.createElement('p');
+            gamePrice.innerText = price + ' руб.';
+
+            container.appendChild(gameTitle);          
+            container.appendChild(image);     
+            container.appendChild(gamePrice);
+            
+            document.body.appendChild(container);
+        }
+
+        createGame('Getting through it', 5000, './linux-logo.png');
+
+        var games = [
+            {
+                title: 'half life 1',
+                price: 100000,
+            },
+            {
+                title: 'half life 2',
+                price: 2000000,
+            },
+            {
+                title: 'half life 3',
+                price: 30000000,
+            },
+        ]
+
+        for (var i = 0; i < games.length; i++) {
+            createGame(games[i].title, games[i].price);
+        }
+    </script>
+</body>
+</html>
