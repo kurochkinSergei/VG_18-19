@@ -41,11 +41,25 @@
             // поместить в i-ую позицию массива значение:
             // reversed[i] = 5;
 
+            for (var i = 0; i < array.length; i++) {
+                // на первой итерации reversed[7 - 0 - 1] = array[0]
+                // на второй итерации reversed[7 - 1 - 1] = array[1]
+
+                // ...
+                // на последней итерации reversed[7 - 6 - 1] = array[6]
+                reversed[array.length - i - 1] = array[i];
+            }
+
+
+            // for (var i = 0; i < array.length; i++) {
+            //     reversed[i] = array[array.length - i - 1];
+            // }
+
 
             return reversed;
         }
 
-        reverseArray(numbers) // [15, 13, 45, 3, 2, 7, 1]
+        console.log(`Отразили массив ${numbers} - `, reverseArray(numbers)) // [15, 13, 45, 3, 2, 7, 1]
 
         function sort(array) {
             // возвращает новый массив, который представляет собой отсортированный старый
