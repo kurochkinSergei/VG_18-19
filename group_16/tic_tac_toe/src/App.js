@@ -26,8 +26,35 @@ class App extends Component {
     return cells;
   }
 
-  clickHandler(e) {
-    console.log('CLICK EVENT', e);
+  clickHandler(cellId) {
+    console.log('clicked cell id', cellId);
+
+    // понять, пустая ячейка или нет?
+
+    // при помощи
+    // const newCells = this.state.cells.map(
+    //   cell => {
+    //     // проверка на id  и изменение ячейки
+
+    //     return cell;
+    //   }
+    // )
+    // создать новый массив, в котором будет изменена
+    // только та ячейка, у которой id === cellId
+
+    // если ячейка пустая, то есть cell.value !== ''
+    // записываем в нее value = 'крестик' или 'нолик'
+    // в зависимости от currentPlayer
+
+    // если ячейка не пустая, то прекращаем выполнение функции командой
+    // return;
+
+    // проверяем, не выиграл ли игрок (реализовать в последнюю очередб)
+
+    // если игрок не выиграл - сменить игрока
+    // то есть поменять currentPlayer
+
+    // записать новый массив ячеек newCells с измененной ячейкой в state
   }
 
   render() {
@@ -36,7 +63,7 @@ class App extends Component {
           {this.state.cells.map(
             cell => (<div
               key={cell.id}
-              onClick={e => this.clickHandler(e)}
+              onClick={() => this.clickHandler(cell.id)}
               className="field-cell">
             </div>)
           )}
