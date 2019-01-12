@@ -31,11 +31,46 @@
             /* выравнивание по горизонтали */
             text-align: center;
         }
+
+        .images-block {
+            width: 800px;
+            height: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: bisque;
+        }
+
+        .images-row {
+            margin-bottom: 20px;
+            font-size: 0;
+        }
+
+        .image {
+            width: 370px;
+            height: 370px;
+            background: red;
+            margin-right: 20px;
+        }
+
+        .image:last-child {
+            margin-right: 0;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1 class="header__title">Шапка сайта</h1>
+    </div>
+
+    <div class="images-block">
+        <div class="images-row">
+            <img class="image" src="">
+            <img class="image" src="">
+        </div>
+        <div class="images-row">
+            <img class="image" src="">
+            <img class="image" src="">
+        </div>
     </div>
 </body>
 </html>
