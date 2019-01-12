@@ -18,6 +18,7 @@
             height: 200px;
             display: inline-block;
             background-color: #f2f2f2;
+            color: red;
         }
 
         .field-row_middle {
@@ -52,8 +53,16 @@
     </div>
     
     <script>
+        var cellValues = [];
+        var currentPlayer = 'крестик'
+
         function handleClick(e) {
-            console.log('EVENT TARGET ID: ', e.target.id)
+            var cellOrder = e.target.id.slice(5);
+            // console.log('EVENT TARGET ID: ', e.target.id.slice(5))
+
+            cellValues[cellOrder] = currentPlayer;
+            cells[cellOrder].innerHTML = currentPlayer;
+            console.log('значения ячеек', cellValues);
         }
 
         // выбор одной ячейки по id 
@@ -67,6 +76,8 @@
 
         // цикл for в котором назначается обработчик на все выбранные ячейки
         for (var i = 0; i < cells.length; i++) {
+            // заполним массив значений ячеек пустыми строками
+            cellValues[i] = '';
             cells[i].addEventListener('click', handleClick);
         }
     </script>
