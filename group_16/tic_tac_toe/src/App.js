@@ -27,8 +27,13 @@ class App extends Component {
 
   render() {
     return (
-        <div>
-          {JSON.stringify(this.state)}
+        <div className="field">
+          {this.state.cells.map(
+            cell => (<div
+              id={cell.id}
+              className="field-cell">
+            </div>)
+          )}
         </div>
     );
   }
