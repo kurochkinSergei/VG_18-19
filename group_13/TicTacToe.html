@@ -49,6 +49,18 @@
             <div id="cell-7" class="field-cell field-cell_middle"></div>
             <div id="cell-8" class="field-cell"></div>
         </div>
-    </div>    
+    </div>
+    
+    <script>
+        function handleClick(e) {
+            console.log('EVENT', e)
+        }
+
+        var cell0 = document.getElementById('cell-0');
+
+        cell0.addEventListener('click', handleClick);
+        
+        console.log('CELL ZERO', cell0);
+    </script>
 </body>
 </html>
