@@ -7,6 +7,7 @@ class App extends Component {
     super(props)
 
     this.state = {
+      currentPlayer: 'крестик',
       cells: this.init(3)
     }
   }
@@ -25,12 +26,17 @@ class App extends Component {
     return cells;
   }
 
+  clickHandler(e) {
+    console.log('CLICK EVENT', e);
+  }
+
   render() {
     return (
         <div className="field">
           {this.state.cells.map(
             cell => (<div
-              id={cell.id}
+              key={cell.id}
+              onClick={e => this.clickHandler(e)}
               className="field-cell">
             </div>)
           )}
