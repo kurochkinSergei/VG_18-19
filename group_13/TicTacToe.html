@@ -53,20 +53,22 @@
     
     <script>
         function handleClick(e) {
-            console.log('EVENT', e)
+            console.log('EVENT TARGET ID: ', e.target.id)
         }
 
         // выбор одной ячейки по id 
-        var cell0 = document.getElementById('cell-0');
+        // var cell0 = document.getElementById('cell-0');
         // назвначение обработчика на одну ячейку
-        cell0.addEventListener('click', handleClick);
+        // cell0.addEventListener('click', handleClick);
 
         // выбор всех ячеек по атрибуту class
         var cells = document.getElementsByClassName('field-cell');
         console.log('CELLS', cells);
 
         // цикл for в котором назначается обработчик на все выбранные ячейки
-        
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].addEventListener('click', handleClick);
+        }
     </script>
 </body>
 </html>
