@@ -56,11 +56,17 @@
             console.log('EVENT', e)
         }
 
+        // выбор одной ячейки по id 
         var cell0 = document.getElementById('cell-0');
-
+        // назвначение обработчика на одну ячейку
         cell0.addEventListener('click', handleClick);
+
+        // выбор всех ячеек по атрибуту class
+        var cells = document.getElementsByClassName('field-cell');
+        console.log('CELLS', cells);
+
+        // цикл for в котором назначается обработчик на все выбранные ячейки
         
-        console.log('CELL ZERO', cell0);
     </script>
 </body>
 </html>
