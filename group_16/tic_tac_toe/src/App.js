@@ -10,6 +10,8 @@ class App extends Component {
       currentPlayer: 'крестик',
       cells: this.init(3)
     }
+
+    this.winnerCombinations = [[0, 1, 2], [1, 4, 7], [0, 4, 8]];
   }
 
   init(size) {
@@ -24,6 +26,28 @@ class App extends Component {
     }
 
     return cells;
+  }
+
+  checkWinner() {
+    const { cells, currentPlayer } = this.state;
+
+    for (let i = 0; i < this.winnerCombinations.length; i++) {
+      const combination = this.winnerCombinations[i];
+
+      let hasWon = true;
+
+      for (let j = 0; j < combination.length; j++) {
+        if (cells[combination[j]].value !== currentPlayer) {
+          hasWon = false;
+        }
+      }
+
+      if (hasWon) {
+        return true
+      }
+    }
+
+    return false;
   }
 
   clickHandler(cell) {
@@ -52,10 +76,18 @@ class App extends Component {
     )
 
     this.setState({
-      currentPlayer: currentPlayer === 'крестик' ? 'нолик' : 'крестик',
       cells: newCells,
     })
 
+    if (!this.checkWinner()) {
+      this.setState({
+        currentPlayer: currentPlayer === 'крестик' ? 'нолик' : 'крестик',
+      })
+    } else {
+      alert(`Пользователь ${currentPlayer} победил!!!`);
+    }
+
+    console.log('CELLS', cells);
     // создать новый массив, в котором будет изменена
     // только та ячейка, у которой id === cellId
 
