@@ -34,8 +34,8 @@
             background: #000;
         }
 
-        .field-cell_cirle {
-            background: #fff;
+        .field-cell_cirсle {
+            background: red;
         }
     
     </style>
@@ -60,18 +60,64 @@
     </div>
     
     <script>
+        // массив значений ячеек
         var cellValues = [];
-        var currentPlayer = 'крестик'
+        // текущий игрок. может быть крестик или нолик
+        var currentPlayer = 'крестик';
+
+        function changePlayer() {
+            if (currentPlayer === 'крестик') {
+                currentPlayer = 'нолик'
+            } else {
+                currentPlayer = 'крестик'
+            } 
+        }
+
+        function fillCell(cell) {
+            if (currentPlayer === 'крестик') {
+                cell.classList.add('field-cell_cross');
+            } else {
+                cell.classList.add('field-cell_cirсle');
+            } 
+        }
+
+        function checkWinner() {
+            // магия javascript 
+            // cellValue
+    
+
+            // если игрок не выиграл
+            return false;
+            // если игрок выиграл
+            return true;
+        }
 
         function handleClick(e) {
-            var cellOrder = e.target.id.slice(5);
+            var cell = e.target;
+            var cellOrder = cell.id.slice(5);
+
+            if (cellValues[cellOrder]) {
+                return;
+            }
+            // console.log('EVENT TARGET: ', e.target)
             // console.log('EVENT TARGET ID: ', e.target.id.slice(5))
 
             // в массиве значений ячеек прописываем значение
             cellValues[cellOrder] = currentPlayer;
 
             // добавляем класс крестика к ячейке
-            cells[cellOrder].classList.add('field-cell_cross');
+            fillCell(cell);
+
+            //проверить, победил ли один из игроков?
+            if (checkWinner()) {
+                alert(`Игрок ${currentPlayer} выиграл!!!`)
+
+                return;
+            }
+
+            // сменить игрока
+            changePlayer();
+
             console.log('значения ячеек', cellValues);
         }
 
