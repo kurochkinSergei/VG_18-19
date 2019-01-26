@@ -26,19 +26,36 @@ class App extends Component {
     return cells;
   }
 
-  clickHandler(cellId) {
+  clickHandler(cell) {
+    const cellId = cell.id;
+    const { cells, currentPlayer } = this.state;
+
     console.log('clicked cell id', cellId);
+    // const cells = this.state.cells;
+    //  строчка 33 идентична строчке 31
+    
+    // понять, пустая ячейка или нет
+    if (cell.value) {
+      console.log('ячейка заполнена');
 
-    // понять, пустая ячейка или нет?
+      return;
+    }
+    
+    const newCells = cells.map(
+      c => {
+        if (c.id === cell.id) {
+          cell.value = currentPlayer;
+        }
 
-    // при помощи
-    // const newCells = this.state.cells.map(
-    //   cell => {
-    //     // проверка на id  и изменение ячейки
+        return c;
+      }
+    )
 
-    //     return cell;
-    //   }
-    // )
+    this.setState({
+      currentPlayer: currentPlayer === 'крестик' ? 'нолик' : 'крестик',
+      cells: newCells,
+    })
+
     // создать новый массив, в котором будет изменена
     // только та ячейка, у которой id === cellId
 
@@ -63,8 +80,11 @@ class App extends Component {
           {this.state.cells.map(
             cell => (<div
               key={cell.id}
-              onClick={() => this.clickHandler(cell.id)}
+              onClick={() => this.clickHandler(cell)}
               className="field-cell">
+                <div className="cell-value">
+                  {cell.value}
+                </div>
             </div>)
           )}
         </div>
