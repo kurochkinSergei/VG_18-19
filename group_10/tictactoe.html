@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="clickable">
+        Нажми меня
+    </div>
+
+    <div class="clickable">
+        Меня тоже
+    </div>
+
+    <script>
+        var clickables = document.getElementsByClassName('clickable');
+        
+        var clickHandler = function (event) {
+            console.log('event target:', event.target);
+
+            event.target.classList.add('red');
+        }
+
+        for ( var i = 0; i < clickables.length; i++) {
+            clickables[i].addEventListener('click', clickHandler);
+        }
+
+        console.log('ЭЛЕМЕНТЫ С КЛАССОМ clickable', clickables);
+    </script>
+</body>
+</html>
