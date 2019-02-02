@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Racket from './Racket';
+
 
 class GameField extends Component {
   width = 500;
@@ -29,21 +31,16 @@ class GameField extends Component {
   }
 
   render() {
-    const racketOneStyle = {
-        left: this.state.racketOne.position.left,
-        top: this.state.racketOne.position.top,
-    } 
-
-    const racketTwoStyle = {
-        left: this.state.racketTwo.position.left,
-        top: this.state.racketTwo.position.top,
-    } 
-
-    console.log('racketStyle', racketOneStyle)
     return (
     <div className="field">
-        <div className="caret" style={racketOneStyle} />
-        <div className="caret" style={racketTwoStyle} />        
+
+        <Racket {...this.state.racketOne} />
+        
+        <Racket
+            position={this.state.racketTwo.position}
+            score={this.state.racketTwo.score}
+        />
+
         <div className="ball" />
     </div>
     );
