@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic Tac Toe</title>
+
     <style>
         .field {
             width: 610px;
@@ -75,6 +76,9 @@
         
         var clickHandler = function (event) {
             console.log('event target:', event.target);
+            console.log('event target classList:', event.target.classList);
+            console.log('Элемент содержит класс clickable', event.target.classList.contains('clickable'));
+            console.log('Элемент содержит класс red', event.target.classList.contains('red'));
 
             event.target.classList.add('red');
         }
