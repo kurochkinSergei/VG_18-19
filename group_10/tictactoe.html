@@ -32,7 +32,7 @@
         }
 
         .field-cell_cross {
-            background: #000;
+            background: rgb(199, 197, 197);
         }
 
         .field-cell_cirсle {
@@ -47,19 +47,19 @@
 <body>
     <div class="field">
         <div class="field-row">
-            <div id="cell-0" class="field-cell"></div>
-            <div id="cell-1" class="field-cell field-cell_middle"></div>
-            <div id="cell-2" class="field-cell"></div>
+            <div id="cell-0" class="field-cell clickable"></div>
+            <div id="cell-1" class="field-cell field-cell_middle clickable"></div>
+            <div id="cell-2" class="field-cell clickable"></div>
         </div>
         <div class="field-row field-row_middle">
-            <div id="cell-3" class="field-cell"></div>
-            <div id="cell-4" class="field-cell field-cell_middle"></div>
-            <div id="cell-5" class="field-cell"></div>
+            <div id="cell-3" class="field-cell clickable"></div>
+            <div id="cell-4" class="field-cell field-cell_middle clickable"></div>
+            <div id="cell-5" class="field-cell clickable"></div>
         </div>
         <div class="field-row">
-            <div id="cell-6" class="field-cell"></div>
-            <div id="cell-7" class="field-cell field-cell_middle"></div>
-            <div id="cell-8" class="field-cell"></div>
+            <div id="cell-6" class="field-cell clickable"></div>
+            <div id="cell-7" class="field-cell field-cell_middle clickable"></div>
+            <div id="cell-8" class="field-cell clickable"></div>
         </div>
     </div>
 
@@ -73,14 +73,40 @@
 
     <script>
         var clickables = document.getElementsByClassName('clickable');
-        
-        var clickHandler = function (event) {
-            console.log('event target:', event.target);
-            console.log('event target classList:', event.target.classList);
-            console.log('Элемент содержит класс clickable', event.target.classList.contains('clickable'));
-            console.log('Элемент содержит класс red', event.target.classList.contains('red'));
+        // true - крестик, false - нолик
+        var player = true;
 
-            event.target.classList.add('red');
+        var combinationsToWin = [[0, 1, 2], [0, 3, 6], [0, 4, 8]];
+
+        var checkForWin = function () {
+            // для всех комбинаций
+            for (var i = 0; ) {
+
+                // для каждого элемента комбинации 
+                for (var j = 0; ) {
+                    // проверяем, имеет ли элемент clickable[j] класс победителя 
+                }
+            }
+        }
+
+        var clickHandler = function (event) {
+            var target = event.target;
+            var targetClassList = target.classList;
+
+            if (targetClassList.contains('field-cell_cross') ||
+                targetClassList.contains('field-cell_circle')) {
+                console.warn('ячейка занята!')
+                
+                return;
+            }
+
+            if (player) {
+                targetClassList.add('field-cell_cross');
+            } else {
+                targetClassList.add('field-cell_cirсle')
+            }
+
+            player = !player;
         }
 
         for ( var i = 0; i < clickables.length; i++) {
