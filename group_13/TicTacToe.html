@@ -80,6 +80,7 @@
                 cell.classList.add('field-cell_cirсle');
             } 
         }
+
         function checkLines() {
             var lineLength = 3;
             var linesNumber = 3;
@@ -88,10 +89,8 @@
             for (var i = 0; i < linesNumber; i++) {
                 // ячейка
                 var isWinner = true;
-                console.log('I', i);
-                console.log('k', k);
+
                 for (var k = i * 3; k < i * 3 + 3; k++) {
-                    console.log('ЯЧЕЙКА', cellValues[k]);
                     if (cellValues[k] !== currentPlayer) {
                         isWinner = false;
                     } 
@@ -111,7 +110,7 @@
             
             console.log('CHECK LINES', checkLines());
             // если игрок не выиграл
-            return checkLines();
+            return checkLines() || checkCols() || checkDiag();
             // если игрок выиграл
             // return true;
         }

@@ -4,14 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
     <style>
+        .field {
+            width: 610px;
+            height: 610px;
+            background-color: gold;
+            font-size: 0;
+        }
+
+        .field-cell {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            background-color: #f2f2f2;
+        }
+
+        .field-row_middle {
+            border-top: 5px solid gold;
+            border-bottom: 5px solid gold;
+        }
+
+        .field-cell_middle {
+            border-left: 5px solid gold;
+            border-right: 5px solid gold;
+        }
+
+        .field-cell_cross {
+            background: #000;
+        }
+
+        .field-cell_cirсle {
+            background: red;
+        }
+
         .red {
             color: red;
         }
     </style>
 </head>
 <body>
+    <div class="field">
+        <div class="field-row">
+            <div id="cell-0" class="field-cell"></div>
+            <div id="cell-1" class="field-cell field-cell_middle"></div>
+            <div id="cell-2" class="field-cell"></div>
+        </div>
+        <div class="field-row field-row_middle">
+            <div id="cell-3" class="field-cell"></div>
+            <div id="cell-4" class="field-cell field-cell_middle"></div>
+            <div id="cell-5" class="field-cell"></div>
+        </div>
+        <div class="field-row">
+            <div id="cell-6" class="field-cell"></div>
+            <div id="cell-7" class="field-cell field-cell_middle"></div>
+            <div id="cell-8" class="field-cell"></div>
+        </div>
+    </div>
+
     <div class="clickable">
         Нажми меня
     </div>
