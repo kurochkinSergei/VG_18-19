@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PONG</title>
+    <style>
+        .field {
+            width: 500px;
+            height: 600px;
+            background: bisque;
+            position: relative;
+        }
+
+        .caret {
+            width: 100px;
+            height: 20px;
+            position: absolute;
+            background: lightgray;
+        }
+
+        .caret_top {
+            top: 0;
+            left: 200px;
+        }
+
+        .caret_bottom {
+            bottom: 0;
+            left: 200px;
+        }
+
+        .ball {
+            position: absolute;
+            top: 290px;
+            left: 240px;
+            width: 20px;
+            height: 20px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="field">
+        <div class="caret caret_top">
+        </div>
+        <div class="caret caret_bottom">
+        </div>
+        
+        <div class="ball"></div>
+    </div>
+</body>
+</html>
