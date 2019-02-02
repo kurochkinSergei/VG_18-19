@@ -27,7 +27,7 @@
 
         .caret_bottom {
             bottom: 0;
-            left: 200px;
+            /* left: 200px; */
         }
 
         .ball {
@@ -41,23 +41,35 @@
     </style>
 </head>
 <body>
-    <div id="gameField" class="field">
+    <div id="game-field" class="field">
         <div class="caret caret_top">
         </div>
-        <div class="caret caret_bottom">
+        <div id="caret-bottom" class="caret caret_bottom">
         </div>
         
         <div class="ball"></div>
     </div>
 
     <script>
-        var gameField = document.getElementById('gameField');
+        var gameField = document.getElementById('game-field');
+        var caretBottom = document.getElementById('caret-bottom')
+
+        caretBottom.style.left = '200px';
+
 
         console.log('поле:::::', gameField);
         console.log('document:::::', document);
 
         var keyDownHandler = function (e) {
             console.log('произошло событие:', e);
+
+            // console.log('Стили нижней каретки:', caretBottom.style);
+
+            if (e.key === 'ArrowRight') {
+                console.log('положение каретки', caretBottom.style.left);
+                caretBottom.style.left =
+                parseInt(caretBottom.style.left.slice(0, -2)) + 25 + 'px';   
+            }
         }
         document.addEventListener('keydown', keyDownHandler);
     </script>
