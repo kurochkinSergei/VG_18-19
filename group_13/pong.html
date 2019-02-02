@@ -41,7 +41,7 @@
     </style>
 </head>
 <body>
-    <div class="field">
+    <div id="gameField" class="field">
         <div class="caret caret_top">
         </div>
         <div class="caret caret_bottom">
@@ -49,5 +49,17 @@
         
         <div class="ball"></div>
     </div>
+
+    <script>
+        var gameField = document.getElementById('gameField');
+
+        console.log('поле:::::', gameField);
+        console.log('document:::::', document);
+
+        var keyDownHandler = function (e) {
+            console.log('произошло событие:', e);
+        }
+        document.addEventListener('keydown', keyDownHandler);
+    </script>
 </body>
 </html>
