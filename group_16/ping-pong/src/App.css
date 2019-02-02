@@ -1,0 +1,28 @@
+.field {
+  width: 500px;
+  height: 600px;
+  background: bisque;
+  position: relative;
+}
+.caret {
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  background: lightgray;
+}
+.caret_top {
+  top: 0;
+  left: 200px;
+}
+.caret_bottom {
+  bottom: 0;
+  /* left: 200px; */
+}
+.ball {
+  position: absolute;
+  top: 290px;
+  left: 240px;
+  width: 20px;
+  height: 20px;
+  background: red;
+}
