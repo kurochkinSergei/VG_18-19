@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var round = {
+            radius: 25,
+            color: '#ff0000',
+            positionX: 50,
+            positionY: 100,
+            'a b c': 123,
+            calcDiameter: function () {
+                console.log('Диаметр:::', this.radius * 2);
+                // console.log('Диаметр:::', this.radius * 2);
+            }, 
+            renderRound: function() {
+                var round = document.createElement('div');
+                round.id = 'sharik'
+                round.style.backgroundColor = this.color;
+                round.style.width = this.radius * 2 + 'px';
+                round.style.height =  this.radius * 2 + 'px';
+                round.style.borderRadius = this.radius + 'px';
+                round.style.position = 'absolute';
+                round.style.top = this.positionY + 'px'; 
+                round.style.left = this.positionX + 'px';
+                
+                document.body.appendChild(round);
+            },
+
+            // moveRound: function () {
+            //   var round = document.getElementById
+            // }
+        }
+        
+        // получение значиения объекта
+        // dot notation -  через точку
+
+        console.log('Цвет круга:', round.color)
+        console.log('Диаметр (свойства нет):', round.diameter);
+        // через скобки
+        
+        console.log('positionX: ', round['positionX']);
+        console.log('странное свойство: ', round['a b c']);
+        // через скобки с переменной
+        
+        var a = 'color';
+        console.log('цвет:::', round[a]);
+
+
+        // Запись свойстваю
+        round.x = 777;
+        round['y'] = 555;
+
+        function calcSquare () {
+            console.log('Площадь круга:::', this.radius * this.radius * Math.PI)
+        }
+
+        var r1 = {
+            radius: 4,
+        }
+
+        var r2 = {
+            radius: 7,
+        }
+        r1.calcSquare = calcSquare;
+        r2.calcSquare = calcSquare;
+
+    </script>
+</body>
+</html>

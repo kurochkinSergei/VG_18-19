@@ -32,8 +32,6 @@
 
         .ball {
             position: absolute;
-            top: 290px;
-            left: 240px;
             width: 20px;
             height: 20px;
             background: red;
@@ -47,18 +45,41 @@
         <div id="caret-bottom" class="caret caret_bottom">
         </div>
         
-        <div class="ball"></div>
+        <div id="ball" class="ball"></div>
     </div>
 
     <script>
         var gameField = document.getElementById('game-field');
-        var caretBottom = document.getElementById('caret-bottom')
+        var caretBottom = document.getElementById('caret-bottom');
+        var ball = document.getElementById('ball');
 
         caretBottom.style.left = '200px';
 
+        ball.style.left = '240px';
+        ball.style.top = '290px';
 
         console.log('поле:::::', gameField);
         console.log('document:::::', document);
+
+        var ballDirection = 'down';
+
+        var moveBall = function () {
+            var leftPosition = parseInt(ball.style.left.slice(0, -2));
+            var topPosition = parseInt(ball.style.top.slice(0, -2));
+            
+            if (ballDirection === 'down') {
+                ball.style.top = topPosition + 20 + 'px';
+                if (topPosition > 560) {
+                    ballDirection = 'up';
+                } 
+
+            } else {
+                ball.style.top = topPosition - 20 + 'px';
+                if (topPosition < 20) {
+                    ballDirection = 'down';
+                } 
+            }
+        }
 
         var keyDownHandler = function (e) {
             console.log('произошло событие:', e);
@@ -67,10 +88,28 @@
 
             if (e.key === 'ArrowRight') {
                 console.log('положение каретки', caretBottom.style.left);
-                caretBottom.style.left =
-                parseInt(caretBottom.style.left.slice(0, -2)) + 25 + 'px';   
+                var currentPosition = parseInt(caretBottom.style.left.slice(0, -2));
+
+                if (currentPosition === 400 ) {
+                    return;
+                }
+
+                caretBottom.style.left = currentPosition + 25 + 'px';   
+            }
+
+            if (e.key === 'ArrowLeft') {
+                var currentPosition = parseInt(caretBottom.style.left.slice(0, -2));
+
+                if (currentPosition === 0 ) {
+                    return;
+                }
+
+                caretBottom.style.left = currentPosition - 25 + 'px';   
             }
         }
+
+        
+        setInterval(moveBall, 200);
         document.addEventListener('keydown', keyDownHandler);
     </script>
 </body>
