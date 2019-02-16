@@ -43,20 +43,51 @@
         <div class="caret caret_top">
         </div>
         <div id="caret-bottom" class="caret caret_bottom">
-        </div>
-        
-        <div id="ball" class="ball"></div>
+        </div>        
     </div>
 
     <script>
         var gameField = document.getElementById('game-field');
         var caretBottom = document.getElementById('caret-bottom');
-        var ball = document.getElementById('ball');
+
+        var ball = {
+            // DOM элемент мячика
+            element: null, 
+            // положение по горизонтали
+            x: 240,
+            // положение по вертикали
+            y: 290,
+            // скорость по горизонтали
+            vX: 0,
+            // скорость по вертикали
+            vY: 0,
+
+            render: function () {
+                var elem = document.createElement('div');
+                elem.id = 'ball';
+                elem.classList.add('ball'); 
+
+                this.element = elem;
+
+                gameField.appendChild(elem);
+                this.setPosition(this.x, this.y);
+
+            },
+
+            setPosition: function (x, y) {
+                this.element.style.left = x + 'px';
+                this.element.style.top = y + 'px';
+            },
+
+            moveBall: function () {},
+
+            changeDirection: function() {}
+        }
 
         caretBottom.style.left = '200px';
 
-        ball.style.left = '240px';
-        ball.style.top = '290px';
+        // ball.style.left = '240px';
+        // ball.style.top = '290px';
 
         console.log('поле:::::', gameField);
         console.log('document:::::', document);
@@ -109,8 +140,10 @@
         }
 
         
-        setInterval(moveBall, 200);
+        // setInterval(moveBall, 200);
         document.addEventListener('keydown', keyDownHandler);
+        
+        ball.render();
     </script>
 </body>
 </html>
