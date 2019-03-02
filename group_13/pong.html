@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PONG</title>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
     <style>
         .field {
             width: 500px;
@@ -36,9 +38,30 @@
             height: 20px;
             background: red;
         }
+
+        .score-bar {
+            display: flex;
+            flex-direction: row;
+            font-size: 72px;
+            font-family: 'VT323', monospace;
+            width: 500px;
+            /* align-items: center;    */
+            justify-content: center;
+            margin: 10px 0;
+            background: plum;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
+
+    <div class="score-bar">
+        <div id="score-top"></div>
+        <div class="score-delimeter">:</div>
+        <div id="score-bottom"></div>
+    </div>
+
     <div id="game-field" class="field">
         <div class="caret caret_top">
         </div>
@@ -106,6 +129,7 @@
                     // console.log('Интервал попадания::: ', bottomCaretPosition, ' - ', bottomCaretPosition + 100);
                     // console.log('Положение мяча по X: ', this.x);
                     this.vY = -this.vY;
+                    incScore('bottom');
                     // менять скорость по x в зависимости от места попадания
                 }
                 if (this.y >= 560) {
@@ -114,8 +138,11 @@
                     if (this.x >= bottomCaretPosition && this.x <= bottomCaretPosition + 100) {
                         this.vY = -this.vY;
                     } else {
-                        clearInterval(this.interval);
-                        alert('ТЫ ПРОИГРАЛ!');
+                        this.vY = -this.vY;
+                        incScore('top');
+
+                        // clearInterval(this.interval);
+                        // alert('ТЫ ПРОИГРАЛ!');
                     }
                     // console.log('Положение нижней каретки по X:::', bottomCaretPosition);
                     // console.log('Интервал попадания::: ', bottomCaretPosition, ' - ', bottomCaretPosition + 100);
@@ -138,6 +165,28 @@
 
         console.log('поле:::::', gameField);
         console.log('document:::::', document);
+
+        var scores = {
+            top: 0,
+            bottom: 0,
+        }
+
+        
+
+        var setScore = function (player, score) {
+            document.getElementById('score-' + player).innerHTML = score;
+        }
+
+        var incScore = function (player) {
+            // 'top', 'bottom'
+            // scores.top = scores.top + 1;
+            // scores.bottom = scores.bottom + 1;
+            scores[player] += 1;
+            setScore(player, scores[player]);
+        }
+
+        setScore('top', 0);
+        setScore('bottom', 0);
 
         var keyDownHandler = function (e) {
             console.log('произошло событие:', e);
