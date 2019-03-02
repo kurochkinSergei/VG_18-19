@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+        // console.log(d);
+        // hoisting
+
+        a = 1;
+        window.e = 5;
+
+        var b = 2;
+        let c = 3;
+        const d = 4;
+
+        function sayVar() {
+            {   
+                var a = 77;
+                let b = 55;
+                const c = 9999;
+                const o = {};
+                const a = [];
+                const a = .5;
+
+                b = 123
+                // c = 123
+                // o.a  = 6
+                // o = ''
+                
+                // LHS RHS
+
+                a = u;
+
+                'sdsdsd sds';
+
+                console.log(b);
+                console.log(o);
+            }
+
+            // a = 77;
+            console.log(a)
+            console.log(c)
+        }
+
+        // sayVar();
+        // console.log(a);
+
+
+
+        function fizzBuzz () {
+            for (let i = 1; i <= 100; i++) {
+                var fizzBuzz = '';
+
+                if (i % 3 === 0) {
+                    fizzBuzz += 'fizz';
+                }
+                
+                if (i % 5 === 0) {
+                    fizzBuzz += 'buzz';
+                }
+
+                console.log(fizzBuzz || i);
+
+                // if (i % 15 === 0) {
+                //     console.log('i ::::', 'FIZZ BUZZ');
+                // } else if (i % 5 === 0) {
+                //     console.log('i ::::', 'BUZZ');
+                // } else if (i % 3 === 0) {
+                //     console.log('i ::::', 'FIZZ');
+                // } else {
+                //     console.log('i::::', i);
+                // }
+            }
+        }
+
+        fizzBuzz();
+    </script>
+</body>
+</html>
