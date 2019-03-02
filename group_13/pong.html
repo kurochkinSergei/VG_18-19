@@ -72,6 +72,7 @@
                 this.element = elem;
 
                 gameField.appendChild(elem);
+
                 this.setPosition(this.x, this.y);
 
                 this.start();
@@ -93,17 +94,25 @@
 
             bounce() {
                 // 0 - 480 - горизонтально
+                // отскок по горизонтали
                 if (this.x <= 0 || this.x >= 480) {
                     this.vX = -this.vX; 
                 }
 
+                // отскок по вертикали
                 if (this.y <= 0 || this.y >= 580) {
-                    this.vY = -this.vY; 
+                    var bottomCaretPosition = parseInt(caretBottom.style.left.slice(0, -2));
+                    console.log('Положение нижней каретки по X:::', bottomCaretPosition);
+                    console.log('Интервал попадания::: ', bottomCaretPosition, ' - ', bottomCaretPosition + 100);
+                    console.log('Положение мяча по X: ', this.x);
+                    this.vY = -this.vY;
+                    // менять скорость по x в зависимости от места попадания
+                    
                 }
             }
 
             start () {
-                setInterval(ball.moveBall.bind(this), 500);
+                setInterval(this.moveBall.bind(this), 500);
             }
 
             changeDirection() {}
