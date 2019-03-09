@@ -26,11 +26,11 @@
     <!-- сделать цвет шрифта нечетных элементов красным -->
     <!-- элементу "Лалала 3" сделать размер шрифта 18px -->
     <div> 
-        <div>Лалала 1</div>
+        <div class="odd">Лалала 1</div>
         <div>Лалала 2</div>
-        <div>Лалала 3</div>
+        <div id="bigger-font" class="odd">Лалала 3</div>
         <div>Лалала 4</div>
-        <div>Лалала 5</div>
+        <div class="odd">Лалала 5</div>
     </div>
 
 
@@ -47,6 +47,19 @@
         // набор элементов, подчиняющихся селектору
         // css - селекторы
         var querySelected = document.querySelectorAll('div > div'); 
+
+
+        var lalala3 = document.getElementById('bigger-font');
+        // увеличить шрифт элемента
+        lalala3.style.fontSize = '36px';
+        
+        // изменить текст внутри элемента
+        lalala3.innerText = 'Привет!!!';
+
+
+        var oddDivs = document.getElementsByClassName('odd');
+        // количество выбранных элементов с классом odd - oddDivs.length
+        
     </script>
         
 </body>
