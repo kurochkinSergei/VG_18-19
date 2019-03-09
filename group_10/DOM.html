@@ -56,10 +56,16 @@
         // изменить текст внутри элемента
         lalala3.innerText = 'Привет!!!';
 
+        // var oddDivs = document.getElementsByClassName('odd');
+        // // количество выбранных элементов с классом odd - oddDivs.length
 
-        var oddDivs = document.getElementsByClassName('odd');
-        // количество выбранных элементов с классом odd - oddDivs.length
-        
+        // for (var i = 0; i < oddDivs.length; i++) {
+        //     oddDivs[i].style.color = '#ff0000';
+        // }
+
+        for (var i = 0; i < querySelected.length; i = i + 2) {
+            querySelected[i].style.color = '#ff0000';
+        }
     </script>
         
 </body>

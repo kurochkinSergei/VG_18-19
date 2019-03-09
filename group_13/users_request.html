@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Запрос пользователей</title>
+</head>
+<body>
+    <button onclick="loadUsers()">
+        Загрузить пользователей
+    </button>
+    <script>
+        var API_URL = 'https://randomuser.me/api/';
+        function appendUsers (usersArray) {
+            for (var i = 0; i < usersArray.length; i++) {
+                var username = usersArray[i].name;
+                var userElement = document.createElement('div');
+                userElement.innerText = username.title + ' ' + username.first + ' ' + username.last;
+
+                document.body.appendChild(userElement);
+            }
+        }
+
+        function loadUsers () {
+            // какие параметры передавать?
+            // что делать, когда мы получили / не получили ответ
+            var request = new XMLHttpRequest();
+            console.log('READY STATE:::', request.readyState);
+
+            // открыть запрос
+
+            var url = API_URL + '?results=5&gender=female';
+            request.open('GET', url, true);
+
+            console.log('READY STATE:::', request.readyState);
+
+            request.send();
+
+            request.onreadystatechange = function () {
+                console.log('READY STATE:::', request.readyState);
+
+                // запрос завершился
+                if (request.readyState === 4) {
+                    // завершился успешно
+                    if (request.status === 200) {
+                        var res = JSON.parse(request.response);
+                        console.log('ОТВЕТ СЕРВЕРА:::', res);
+
+                        appendUsers(res.results);
+                    } else {
+                        // завершился неуспешно
+                        console.error('ОШИБКА!!!!!!')
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
