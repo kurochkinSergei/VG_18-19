@@ -7,6 +7,10 @@
     <title>Запрос пользователей</title>
 </head>
 <body>
+    <div id="lalala">
+        Слово
+        <span> ;;skfkfkf</span>
+    </div>
     <button onclick="loadUsers()">
         Загрузить пользователей
     </button>
@@ -14,9 +18,28 @@
         var API_URL = 'https://randomuser.me/api/';
         function appendUsers (usersArray) {
             for (var i = 0; i < usersArray.length; i++) {
+                var user = usersArray[i];
+
                 var username = usersArray[i].name;
                 var userElement = document.createElement('div');
-                userElement.innerText = username.title + ' ' + username.first + ' ' + username.last;
+                
+                userElement.style.padding = '15px';
+                userElement.style.textAlign = 'center';
+                
+                var fullName = username.title + ' ' + username.first + ' ' + username.last;
+                // userElement.innerHTML = `
+                //     <img src="${user.picture.medium}">
+                //     <h3>${fullName}</h3>
+                // `
+               
+                var image = document.createElement('img');
+                image.src = user.picture.medium;
+                image.style.display = 'block';
+
+                userElement.appendChild(image);
+                userElement.appendChild(document.createTextNode(fullName));
+                
+                // username.title + ' ' + username.first + ' ' + username.last;
 
                 document.body.appendChild(userElement);
             }
