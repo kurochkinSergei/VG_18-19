@@ -23,13 +23,34 @@
             var sum = 0;
 
             for (var i = 0; i < arguments.length; i++ ) {
-                arguments[4]
+                var arg = arguments[i];
+                // если аргумент - число - 
+                if ((typeof arg === 'number') && (arg === arg)) {
+                    sum = sum + arg;
+                }
+
+                if ((typeof arg === 'string')) {
+                    // если аргумент - строка
+                    arg = parseFloat(arg);
+
+                    if (arg === arg) {
+                        sum = sum + arg;
+                    }
+                }
             }
 
             return sum;
         }
+ 
+        console.log(summarize(3, 7, 8, '222', '5.5', NaN, {a: 5}, ['sdsd']))
 
-        console.log(summarize(3, 7, 8, 25, 8, 7, 14))
+        // char - символ для поиска в строке str
+        // возвращает количество вхождений символа char в строку str
+        function findChar(char, str) {
+
+        }
+
+        findChar('H', 'aHhjjjjjjH') // 2
     </script>
 </body>
 </html>
