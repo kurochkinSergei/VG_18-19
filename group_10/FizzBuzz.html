@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fizzBuzz1() {
+            for (var i = 1; i < 101; i++) {
+                if (a % 3 === 0) {
+                    if (a % 5 == 0) {
+                        console.log('FizzBuzz');
+                    } else {
+                        console.log('Fizz');
+                    }
+                } else if (a % 5 == 0) {
+                    console.log('Buzz');
+                } else {
+                    console.log(i);
+                }
+            }
+        }
+
+        function fizzBuzz2() {
+            for (var i = 1; i < 101; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    console.log('FizzBuzz');
+                    continue;
+                }
+
+                if ( i % 3 === 0) {
+                    console.log('Fizz');
+                    continue;
+                }
+
+                if ( i % 5 === 0) {
+                    console.log('Buzz');
+                    continue;
+                }
+
+                console.log(i);
+            }
+        }
+
+
+        function fizzBuzz3() {
+            for (var i = 1; i < 101; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    console.log('FizzBuzz');
+                } else if ( i % 3 === 0) {
+                    console.log('Fizz');
+                } else if ( i % 5 === 0) {
+                    console.log('Buzz');
+                } else {
+                    console.log(i);
+                }
+            }
+        }
+
+        function fizzBuzz4() {
+            for (var i = 1; i < 101; i++) {
+                var s = '';
+
+                if ( i % 3 === 0) {
+                    s = s + 'Fizz';
+                } 
+                if ( i % 5 === 0) {
+                    s = s + 'Buzz';
+                }
+
+                console.log(s || i);
+
+                // if (s) {
+                //     // если строка не пустая
+                //     сonsole.log(s);
+                // } else {
+                //     console.log(i);
+                // }
+            }
+        }
+    </script>
+</body>
+</html>

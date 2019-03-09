@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Работа с DOM</title>
+</head>
+<body>
+    <!-- <div class='first-div'>
+       Привет, я див! 
+    </div>
+    
+    <div id="special">
+       Привет, я тоже див! 
+    </div>
+
+    <div>
+        <div>
+            Я внутри
+        </div>
+       Привет, я тоже див! 
+    </div> -->
+    
+    <!-- При помощи JavaScript -->
+    <!-- сделать цвет шрифта нечетных элементов красным -->
+    <!-- элементу "Лалала 3" сделать размер шрифта 18px -->
+    <div> 
+        <div>Лалала 1</div>
+        <div>Лалала 2</div>
+        <div>Лалала 3</div>
+        <div>Лалала 4</div>
+        <div>Лалала 5</div>
+    </div>
+
+
+    <script>
+        // возвращает набор всех div на нашей странице
+        var divs = document.getElementsByTagName('div');
+
+        // возвращает набор элементов с классом 'first-div'
+        var divsWithClass = document.getElementsByClassName('first-div');
+        
+        // возвращает один элемент с id - special
+        var specialDiv = document.getElementById('special');
+
+        // набор элементов, подчиняющихся селектору
+        // css - селекторы
+        var querySelected = document.querySelectorAll('div > div'); 
+    </script>
+        
+</body>
+</html>
