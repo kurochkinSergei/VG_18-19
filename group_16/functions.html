@@ -15,11 +15,11 @@
 
         // var number = parseFloat(prompt('lalal'));
 
-        console.log(addTwo(2, 3));
+        console.log('addTwo:::', addTwo(2, 3));
 
 
         function summarize () {
-            console.log('arguments:::', arguments);
+            // console.log('arguments:::', arguments);
             var sum = 0;
 
             for (var i = 0; i < arguments.length; i++ ) {
@@ -42,15 +42,23 @@
             return sum;
         }
  
-        console.log(summarize(3, 7, 8, '222', '5.5', NaN, {a: 5}, ['sdsd']))
+        console.log('summarize:::', summarize(3, 7, 8, '222', '5.5', NaN, {a: 5}, ['sdsd']))
 
         // char - символ для поиска в строке str
         // возвращает количество вхождений символа char в строку str
         function findChar(char, str) {
+            var count = 0;
 
+            for (var i = 0; i < str.length; i++) {
+                if (str[i] === char) {
+                    count = count + 1;
+                }
+            }
+
+            return count;
         }
 
-        findChar('H', 'aHhjjjjjjH') // 2
+        console.log('findChar::::', findChar('H', 'aHhjjjjjjH')); // 2
     </script>
 </body>
 </html>

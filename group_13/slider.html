@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Слайдер</title>
+
+    <style>
+        .slider {
+            width: 800px;
+            height: 600px;
+            padding: 20px;
+            position: relative;
+            background: lightskyblue;
+        }
+
+        .slider-images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider-image {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .slider-controls {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            background: rgba(256,256,256, 0.5);
+        }
+
+        .control-button {
+            padding: 10px;
+            margin: 10px;
+            color: darkslategray;
+            display: inline-block;
+            border: 1px solid darkslategray;
+            cursor: pointer;
+        }
+
+        .active-button {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-images">
+            <img src="./grumpy_cat.jpg" class="slider-image">
+            <img src="./clever_cat.jpg" class="slider-image hidden">
+            <img src="./ugly_cat.jpeg" class="slider-image hidden">
+        </div>
+
+        <div class="slider-controls">
+            <div class="control-button active-button">хмурый кот</div>
+            <div class="control-button">умный кот</div>
+            <div class="control-button">страшный кот</div>
+        </div>
+    </div>
+</body>
+</html>
