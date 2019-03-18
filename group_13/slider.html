@@ -61,16 +61,39 @@
 <body>
     <div class="slider">
         <div class="slider-images">
-            <img src="./grumpy_cat.jpg" class="slider-image">
+            <img id="img1" src="./grumpy_cat.jpg" class="slider-image">
             <img src="./clever_cat.jpg" class="slider-image hidden">
             <img src="./ugly_cat.jpeg" class="slider-image hidden">
         </div>
 
         <div class="slider-controls">
-            <div class="control-button active-button">хмурый кот</div>
+            <div class="control-button active-button" data-image="img1">хмурый кот</div>
             <div class="control-button">умный кот</div>
             <div class="control-button">страшный кот</div>
         </div>
     </div>
+
+    <script>
+        var images = document.getElementsByClassName('slider-image');
+        var controls = document.getElementsByClassName('control-button');
+    
+        for (var i = 0; i < controls.length; i++) {
+            controls[i].addEventListener('click', showImage(i))
+        }
+
+        function showImage (index) {
+            return function () {
+                // убираем всем картинкам и кнопкам активное состояние
+                for (var i = 0; i < images.length; i++) {
+                    images[i].classList.add('hidden');
+                    controls[i].classList.remove('active-button');
+                }
+
+                // показываем нужную картинку и делаем кнопку активной
+                images[index].classList.remove('hidden');
+                controls[index].classList.add('active-button');
+            }
+        }
+    </script>
 </body>
 </html>
