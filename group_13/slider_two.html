@@ -11,6 +11,7 @@
             flex-direction: row;
             position: absolute;
             top: 0;
+            transition: left 500ms ease-in-out;
         }
 
         .image {
@@ -62,32 +63,67 @@
         </div>
         
         <div class="controls">
-            <button>ВЛЕВЕЕ</button>
-            <button onclick="moveSliderRight()">ВПРАВЕЕ</button>
+            <button id="move-left" onclick="moveSliderLeft()">ВЛЕВЕЕ</button>
+            <button id="move-right" onclick="moveSliderRight()">ВПРАВЕЕ</button>
         </div>
     </div>
     
     <script>
+        // размер одного слайда
         var slideWidth = 400;
-        var currentPosition = -750;
+        // количество слайдов
+        var slideCount = 5;
+        // начальное положение
+        var currentPosition = 0;
 
+        // выбор левой кнопки
+        var leftButton = document.getElementById('move-left');
+        // выбор правой кнопки
+        var rightButton = document.getElementById('move-right');
+        // выбор всех элементов с классом 'images-wrapper'
+        //и выбор первого элемента из полученного набора
         var imagesWrapper = document.getElementsByClassName('images-wrapper')[0];
 
         function changePosition(value) {
-            var newPosition = currentPosition + value;
+            // currentPosition - текущее значение атрибута left элемента imagesWrapper
+            // value - то, насколько хотим изменить currentPosition
 
-            imagesWrapper.style.left = newPosition + 'px';
-            currentPosition = newPosition;
+            // изменяем currentPosition
+            currentPosition += value;
+
+            // изменение атрибута left для элемента imagesWrapper
+            imagesWrapper.style.left = currentPosition + 'px';
+
+            // выключаем кнопки
+            disableButtons();
         }
 
-        changePosition(0)
+        function disableButtons () {
+            if (currentPosition === 0) {
+                leftButton.disabled = true;
+            } else {
+                leftButton.disabled = false;
+            }
+
+            if (currentPosition === -1 * (slideCount - 1) * slideWidth) {
+                rightButton.disabled = true;
+            } else {
+                rightButton.disabled = false;
+            }
+        }
 
         function moveSliderRight () {
-            console.log('lalalala');
+            console.warn('ATTENTION: moving RIGHT!!!');
+            changePosition(-slideWidth);
         }
-        // Выбрать элемент images-wrapper
-        // назначить обработчик события нажатия на кнопки
-    
+
+        function moveSliderLeft () {
+            console.warn('ATTENTION: moving LEFT!!!');
+            changePosition(slideWidth);
+        }
+        
+        // ставим начальное положение равным 0
+        changePosition(0)
     </script>
 </body>
 </html>
