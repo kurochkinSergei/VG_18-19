@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .images-wrapper {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+        }
+
+        .image {
+            width: 400px;
+            height: 400px;
+            background: lightcoral;
+            font-size: 42px;
+            line-height: 400px;
+            text-align: center;
+        }
+
+        .image:nth-child(2n) {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="images-wrapper">
+        <div class="image">0</div>
+        <div class="image">1</div>
+        <div class="image">2</div>
+        <div class="image">3</div>
+        <div class="image">4</div>
+    </div>
+</body>
+</html>
