@@ -26,25 +26,68 @@
             background-color: lightgreen;
         }
 
-        .slider {
+        .view-window {
             width: 400px;
             height: 400px;
             border: 5px solid black;
-            margin: 50px 200px;
             position: relative;
             overflow: hidden;
+        }
+
+        .slider {
+            margin: 50px 200px;
+        }
+        
+        .controls {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .controls button {
+            height: 30px;
+            margin-right: 20px;
         }
     </style>
 </head>
 <body>
     <div class="slider">
-        <div class="images-wrapper" style="left: 0;">
-            <div class="image">0</div>
-            <div class="image">1</div>
-            <div class="image">2</div>
-            <div class="image">3</div>
-            <div class="image">4</div>
+        <div class="view-window">
+            <div class="images-wrapper">
+                <div class="image">0</div>
+                <div class="image">1</div>
+                <div class="image">2</div>
+                <div class="image">3</div>
+                <div class="image">4</div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button>ВЛЕВЕЕ</button>
+            <button onclick="moveSliderRight()">ВПРАВЕЕ</button>
         </div>
     </div>
+    
+    <script>
+        var slideWidth = 400;
+        var currentPosition = -750;
+
+        var imagesWrapper = document.getElementsByClassName('images-wrapper')[0];
+
+        function changePosition(value) {
+            var newPosition = currentPosition + value;
+
+            imagesWrapper.style.left = newPosition + 'px';
+            currentPosition = newPosition;
+        }
+
+        changePosition(0)
+
+        function moveSliderRight () {
+            console.log('lalalala');
+        }
+        // Выбрать элемент images-wrapper
+        // назначить обработчик события нажатия на кнопки
+    
+    </script>
 </body>
 </html>
