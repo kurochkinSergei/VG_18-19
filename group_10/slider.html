@@ -16,6 +16,7 @@
             align-items: center;
             position: absolute;
             left: 0;
+            transition: left 500ms linear;
         }
 
         .slider {
@@ -36,8 +37,8 @@
     </div>
 
     <button onClick="showImg1()">Картинка 1</button>
-    <button onClick="">Картинка 2</button>
-    <button onClick="">Картинка 3</button>
+    <button onClick="showImg2()">Картинка 2</button>
+    <button onClick="showImg3()">Картинка 3</button>
 
     <script>
         var images = document.getElementById('images');
@@ -47,13 +48,15 @@
         function showImg1() {
             // записывает элементу images такое значение атрибута style.left
             // что становится видна первая картинка
-            images.style.left = '-50px';
+            images.style.left = '0px';
         }
 
         function showImg2() {
+            images.style.left = '-400px';
         }
 
         function showImg3() {
+            images.style.left = '-800px';
         }      
     </script>
 </body>
