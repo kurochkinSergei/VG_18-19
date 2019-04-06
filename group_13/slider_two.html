@@ -111,6 +111,12 @@
             if (currentPosition === - (slideCount - 1) * 400) {
                 extendSlider('end');
             }
+
+            if (currentPosition === 0) {
+                extendSlider('start');
+
+                //манипуляции с position
+            }
             // изменяем currentPosition
             currentPosition += value;
 
