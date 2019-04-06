@@ -11,6 +11,9 @@
             flex-direction: row;
             position: absolute;
             top: 0;
+        }
+
+        .transition {
             transition: left 500ms ease-in-out;
         }
 
@@ -53,7 +56,7 @@
 <body>
     <div class="slider">
         <div class="view-window">
-            <div class="images-wrapper">
+            <div class="images-wrapper transition">
                 <!-- <div class="image">0</div>
                 <div class="image">1</div>
                 <div class="image">2</div>
@@ -68,6 +71,9 @@
         </div>
     </div>
     
+    <div id="fake">
+
+    </div>
     <script>
         // размер одного слайда
         var slideWidth = 400;
@@ -96,9 +102,13 @@
                     imagesWrapper.appendChild(elem);
                 }
             } else {
-                // если position === 'start'
+                for (var i = imagesArray.length - 1; i >= 0; i--) {
+                    var elem = document.createElement('div');
+                    elem.classList.add('image');
+                    elem.innerHTML = imagesArray[i];
 
-                // imagesWrapper.prependChild(....)
+                    imagesWrapper.prepend(elem);
+                }
             }
         }
 
@@ -108,38 +118,28 @@
             var slideCount = imagesWrapper.childElementCount;
             console.log('slideCount', slideCount);
             
-            if (currentPosition === - (slideCount - 1) * 400) {
+            if (currentPosition === - (slideCount - 1) * 400 && value < 0) {
                 extendSlider('end');
             }
 
-            if (currentPosition === 0) {
+            if (currentPosition === 0 && value > 0) {
                 extendSlider('start');
-
-                //манипуляции с position
+                currentPosition = -(imagesArray.length) * slideWidth;
+                imagesWrapper.classList.remove('transition');                
+                imagesWrapper.style.left = currentPosition + 'px';
             }
+
+            // делаем небольшую задержку, чтобы не было
+            // анимации на переход от 0 до новой позиции начального элемента
+            setTimeout(() => {
+                currentPosition += value;
+
+                // изменение атрибута left для элемента imagesWrapper
+                imagesWrapper.classList.add('transition');
+                imagesWrapper.style.left = currentPosition + 'px';
+            }, 100)
             // изменяем currentPosition
-            currentPosition += value;
-
-            // изменение атрибута left для элемента imagesWrapper
-            imagesWrapper.style.left = currentPosition + 'px';
-
-            // выключаем кнопки
-            // disableButtons();
         }
-
-        // function disableButtons () {
-        //     if (currentPosition === 0) {
-        //         leftButton.disabled = true;
-        //     } else {
-        //         leftButton.disabled = false;
-        //     }
-
-        //     if (currentPosition === -1 * (slideCount - 1) * slideWidth) {
-        //         rightButton.disabled = true;
-        //     } else {
-        //         rightButton.disabled = false;
-        //     }
-        // }
 
         function moveSliderRight () {
             console.warn('ATTENTION: moving RIGHT!!!');
