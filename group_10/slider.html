@@ -28,19 +28,26 @@
 </head>
 <body>
     <div class="slider">
-        <div class="images">
+        <div id="images" class="images">
             <img src="../group_13/grumpy_cat.jpg">
             <img src="../group_13/ugly_cat.jpeg">
             <img src="../group_13/clever_cat.jpg">
         </div>
     </div>
 
-    <button onClick="">Картинка 1</button>
+    <button onClick="showImg1()">Картинка 1</button>
     <button onClick="">Картинка 2</button>
     <button onClick="">Картинка 3</button>
 
     <script>
+        var images = document.getElementById('images');
+        
+        // var images = document.getElementsByClassName('images')[0];
+
         function showImg1() {
+            // записывает элементу images такое значение атрибута style.left
+            // что становится видна первая картинка
+            images.style.left = '-50px';
         }
 
         function showImg2() {
