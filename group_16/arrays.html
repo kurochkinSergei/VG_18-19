@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arrayOne = [789];
+        var anotherTwo = new Array();
+
+        // получаем элемент массива
+        console.log(arrayOne[0])
+
+        // добавление элемента в массив
+        arrayOne[1] = 123;
+
+        // добавть элемент в конец массива
+        arrayOne.push('ABC');
+
+        // удалить последний элемент из массива
+        arrayOne.pop()
+
+        // длина массива
+        console.log(arrayOne.length)
+
+        var a = [7, 9, 16, 22];
+
+        a.forEach(function (elem, index) {
+            console.log('ELEM - ' + index + ':', elem);
+        })
+        
+        var array = [13, 22, -9, 2, 32, 3 ,0, 76]
+
+        // var newArray = array.filter();
+
+        // при помощи метода Array.proptotype.filter()
+        // создать новый массив newArray, который содержит
+        // элементы массива array, которые больше 10
+
+        var array1 = ['concatenation', 'dog', 'category', 'house', 'cat', 'caterpillar']  
+        // при помощи метода Array.proptotype.filter()
+        // создать новый массив newArray1, который содержит
+        // элементы массива array1, которые содержат подстроку 'cat'
+
+        var array2 = ['a', 'b', 'c', 'd', 'e', 'f']
+        // при помощи метода Array.proptotype.filter()
+        // создать новый массив newArray2, который содержит
+        // элементы массива array2 индексы которых не четные
+        // newArray = ['b', 'd', 'f']
+        // 5 % 2
+
+        const newArray2 = array2.filter(function (element, index, arr) {
+            return index % 2;
+        });
+
+        console.log('newArray2', newArray2)
+        console.log('anotherTwo', anotherTwo)
+    </script>
+</body>
+</html>
