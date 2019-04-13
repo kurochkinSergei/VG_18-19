@@ -90,7 +90,7 @@
         //и выбор первого элемента из полученного набора
         var imagesWrapper = document.getElementsByClassName('images-wrapper')[0];
 
-        var imagesArray = [0, 1, 2, 3, 4];
+        var imagesArray = ['./cat.jpg',0, 1, 2, 3, 4];
 
         function extendSlider(position) {
             if (position === 'end') {
@@ -105,6 +105,7 @@
                 for (var i = imagesArray.length - 1; i >= 0; i--) {
                     var elem = document.createElement('div');
                     elem.classList.add('image');
+                    // image.src = imagesArray[i]
                     elem.innerHTML = imagesArray[i];
 
                     imagesWrapper.prepend(elem);

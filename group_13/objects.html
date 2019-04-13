@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Объекты</title>
+</head>
+<body>
+    <script>
+        // создание "пустого" объекта
+
+        // создание при помощи литерала объекта
+        var o = {
+            a: 5,
+            b: 9,   
+            '1': '123',
+            0: 666,
+            777: 123,
+            // hello-kitty: 123,
+        };    
+        
+        // создание через констуктор
+        var o1 = new Object();
+
+        o1.a = 5;
+        o1.b = 7;
+        o1['hello-kitty'] = 555;
+
+        // получить значение 
+        console.log('поле b объекта о:', o.b)
+        console.log('поле b объекта о1:', o1.b)
+
+        // document.getElementById()
+        // array.length
+        console.log('поле b объекта о:', o['b']);
+        console.log('поле b объекта о1:', o1['b']);
+    </script>
+</body>
+</html>
