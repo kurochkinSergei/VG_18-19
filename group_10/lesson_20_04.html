@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumDigits (number) {
+            return number
+                .toString()
+                .split('')
+                .reduce(
+                    function (prev, curr) {
+                        return parseInt(prev) + parseInt(curr);
+                });
+        }
+
+        function sumDigitsClassic (number) {
+            var sum = 0;
+            var int = number;
+
+            while (int) {
+                sum += int % 10;
+                int = Math.floor(int / 10);
+            }
+
+            return sum;
+        }
+
+        function logTime(n, fn, l) {
+            console.time(l);
+
+            for (var i = 0; i < n; i++) {
+                fn();
+            }
+            console.timeEnd(l)
+        }
+
+        logTime(10000000, () => sumDigits(789123), 'sumDigits')
+        logTime(10000000, () => sumDigitsClassic(789123), 'classic')
+    </script>
+</body>
+</html>
+
